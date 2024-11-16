@@ -25,10 +25,33 @@ For installation on other platforms, refer to the [official documentation](https
 In this example, we will use the GitHub Action specified [here](./../../.github/workflows/nirmata-scan-guestbook-app.yaml)
 
 * **Trigger:** This workflow runs when a PR is opened or updated against the main branch. It watches for changes in `shift-left/app/` directory.
+```bash
+on:
+  pull_request:
+    branches:
+      - "main"
+    paths:
+      - "shift-left/app/**"
+```
 
 * **Set up Nirmata CLI**: This step downloads and installs the Nirmata CLI.
 
 * **Run Scan:** `nctl` scans the Dockerfile and Kubernetes manifests, and reports any violations in the PR.
+```bash
+- name: NCTL Scan App Manifests
+  run: |
+    nctl scan kubernetes \
+    --resources shift-left/app/manifests \
+    --policy-sets pss-baseline,pss-restricted \
+    --details --publish
+
+- name: NCTL Scan Dockerfile
+    run: |
+    nctl scan dockerfile \
+    --resources shift-left/app/src/Dockerfile \
+    --policy-sets dockerfile-best-practices \
+    --details --publish
+```
 
 * **Check for Failures:** If the scan results contain failures, the workflow exits with an error (exit 1), causing the PR to fail. If the scan passes, it prints a success message.
 
@@ -48,7 +71,7 @@ When the code is merged into the main branch, ArgoCD will automatically sync (if
 Finally, the scan results, including any misconfigurations found in the Dockerfile and Kubernetes manifests, can be viewed in the Nirmata dashboard:
 
 * Navigate to the Nirmata Control Hub.
-* Go to `Policy Reports > Repositories` and select your repository and branch.
+* Go to `Policy Reports > Repository` and select your repository and branch.
 The dashboard will show detailed reports on any misconfigurations, allowing you to take action on them.
 
 
