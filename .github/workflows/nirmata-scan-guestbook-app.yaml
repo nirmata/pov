@@ -39,6 +39,9 @@ jobs:
     - name: nctl login
       run: nctl login --url $NIRMATA_URL --userid $NIRMATA_USER --token $NIRMATA_TOKEN
 
+    - name: cat file
+      run: cat shift-left/app/manifests/guestbook-ui-deployment.yaml
+      
     - name: NCTL Scan App Manifests
       run: |
         nctl scan kubernetes \
