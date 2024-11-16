@@ -3,6 +3,8 @@ kind: Deployment
 metadata:
   name: guestbook-ui
   namespace: guestbook
+  labels:
+    foo: bar
 spec:
   replicas: 1
   revisionHistoryLimit: 3
@@ -14,7 +16,7 @@ spec:
       labels:
         app: guestbook-ui
     spec:
-      automountServiceAccountToken: false
+      automountServiceAccountToken: true
       securityContext:
         runAsNonRoot: true
         seccompProfile:
