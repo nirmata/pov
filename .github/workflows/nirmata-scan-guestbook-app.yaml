@@ -7,6 +7,11 @@ on:
     paths:
       - "shift-left/app/**"
 
+env:
+  NIRMATA_TOKEN: ${{ secrets.NIRMATA_TOKEN }}
+  NIRMATA_URL: ${{ secrets.NIRMATA_URL }}
+  NIRMATA_USER: ${{ secrets.NIRMATA_USER }}
+
 jobs:
   check_changes:
     runs-on: ubuntu-latest
@@ -26,16 +31,19 @@ jobs:
       run: |
         nctl version
 
+    - name: nctl login
+      run: nctl login --url $NIRMATA_URL --userid $NIRMATA_USER --token $NIRMATA_TOKEN
+
     - name: NCTL Scan App Manifests
       run: |
         nctl scan kubernetes \
-          --resources shift-left/app/manifests
+          --resources shift-left/app/manifests \
           --policy-sets pss-baseline,pss-restricted \
-          --details
+          --details --publish
 
     - name: NCTL Scan Dockerfile
       run: |
         nctl scan dockerfile \
-          --resources shift-left/app/src/Dockerfile
+          --resources shift-left/app/src/Dockerfile \
           --policy-sets dockerfile-best-practices \
-          --details
+          --details --publish

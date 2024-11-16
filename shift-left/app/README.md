@@ -26,7 +26,7 @@ In this example, we will use the GitHub Action specified [here](./../../.github/
 
 * **Set up Nirmata CLI**: This step downloads and installs the Nirmata CLI. The `login` step is not required if you are not publishing the results to Nirmata.
 
-* **Run Scan:** `nctl` scans the Dockerfile and Kubernetes manifests, and reports any violations in the PR.
+* **Run Scan:** `nctl` scans the Dockerfile and Kubernetes manifests, and reports any violations in the PR. Remove the `--publish` flag if you are not publishing the results to Nirmata.
 
 * **Check for Failures:** If the scan results contain failures, the workflow exits with an error (exit 1), causing the PR to fail. If the scan passes, it prints a success message.
 
