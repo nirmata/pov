@@ -10,6 +10,8 @@ Before you start, ensure you have the following:
 * Kubernetes cluster for syncing apps via Argo CD.
 * Nirmata CLI and GitHub Actions for scanning.
 
+>NOTE: The policies in this example are used from the [Nirmata curated policysets](https://github.com/nirmata/kyverno-policies).
+
 ## Set up Nirmata CLI
 If you are on Mac, use the following command.
 ```bash
@@ -24,11 +26,15 @@ In this example, we will use the GitHub Action specified [here](./../../.github/
 
 * **Trigger:** This workflow runs when a PR is opened or updated against the main branch. It watches for changes in `shift-left/app/` directory.
 
-* **Set up Nirmata CLI**: This step downloads and installs the Nirmata CLI. The `login` step is not required if you are not publishing the results to Nirmata.
+* **Set up Nirmata CLI**: This step downloads and installs the Nirmata CLI.
 
-* **Run Scan:** `nctl` scans the Dockerfile and Kubernetes manifests, and reports any violations in the PR. Remove the `--publish` flag if you are not publishing the results to Nirmata.
+* **Run Scan:** `nctl` scans the Dockerfile and Kubernetes manifests, and reports any violations in the PR.
 
 * **Check for Failures:** If the scan results contain failures, the workflow exits with an error (exit 1), causing the PR to fail. If the scan passes, it prints a success message.
+
+>NOTE: If you don't have a Nirmata account, sign-up for a [free trial of Nirmata Control Hub](https://try.nirmata.io/) to publish and view results in a central dashboard
+
+>NOTE: You can skip the `login` step and remove the `--publish` flag from the `nctl scan` command if you are not connected to Nirmata Control Hub. You will still be able to view the results in the GitHub Action.
 
 ## ArgoCD Setup for Syncing Apps
 Follow the [Getting Started](https://argo-cd.readthedocs.io/en/stable/getting_started/) guide to setup ArgoCD in your cluster.
