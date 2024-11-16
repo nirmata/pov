@@ -1,0 +1,40 @@
+name: Scan GuestBook App
+run-name: ${{ github.actor }} has triggered Scan Action 🚀
+on:
+  pull_request:
+    branches:
+      - "main"
+    paths:
+      - "shift-left/app/**"
+
+jobs:
+  check_changes:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: nctl-scan-installer
+      uses: supplypike/setup-bin@v4
+      with:
+        uri: https://dl.nirmata.io/nctl/nctl_4.3.1/nctl_4.3.1_linux_386.zip
+        name: 'nctl'
+
+    - name: Check nctl version
+      run: |
+        nctl version
+
+    - name: NCTL Scan App Manifests
+      run: |
+        nctl scan kubernetes \
+          --resources shift-left/app/manifests
+          --policy-sets pss-baseline,pss-restricted \
+          --details
+
+    - name: NCTL Scan Dockerfile
+      run: |
+        nctl scan dockerfile \
+          --resources shift-left/app/src/Dockerfile
+          --policy-sets dockerfile-best-practices \
+          --details
