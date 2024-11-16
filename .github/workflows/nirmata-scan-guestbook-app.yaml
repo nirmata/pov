@@ -18,9 +18,9 @@ jobs:
     - name: nctl-scan-installer
       uses: supplypike/setup-bin@v4
       with:
-        uri: https://dl.nirmata.io/nctl/nctl_4.3.1/nctl_4.3.1_linux_386.zip
+        uri: https://dl.nirmata.io/nctl/nctl_4.2.4/nctl_4.2.4_linux_386.zip
         name: 'nctl'
-        version: '4.3.1'
+        version: '4.2.4'
 
     - name: Check nctl version
       run: |
