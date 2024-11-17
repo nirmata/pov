@@ -25,16 +25,14 @@ Learn how to:
 ## How to Use This Repository
 This repository is structured to help you understand the capabilities of Nirmata's products and address specific use cases. Here’s how you can get started:
 
-1. **Explore the Directories**
+1. **Explore the Directories:**
     * Begin by browsing through all the directories to get a sense of what Nirmata's products can help you achieve.
     * Each directory contains workflows, guides, and best practices tailored for Enterprise Kyverno and Nirmata Control Hub.
 
-2. **Jump to Your Use Case**
+2. **Jump to Your Use Case:**
     * If you have a specific use case in mind, feel free to dive directly into the relevant section and follow the detailed instructions.
 
-3. **Suggested Flow for New Users**
-
-If you’re new to Nirmata or looking for a structured path, we recommend the following approach:
+3. **Suggested Flow for New Users:** If you’re new to Nirmata or looking for a structured path, we recommend the following approach:
     * **Start with Enterprise Kyverno**
     Install and configure Enterprise Kyverno to secure your Kubernetes environment.
     * **Install Curated Policies**
