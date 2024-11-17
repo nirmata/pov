@@ -1,0 +1,51 @@
+name: Scan Terraform Manifests
+run-name: ${{ github.actor }} has triggered Scan Action 🚀
+on:
+  pull_request:
+    branches:
+      - "main"
+    paths:
+      - "shift-left/iac/terraform/**"
+
+env:
+  NIRMATA_TOKEN: ${{ secrets.NIRMATA_TOKEN }}
+  NIRMATA_URL: ${{ secrets.NIRMATA_URL }}
+  NIRMATA_USER: ${{ secrets.NIRMATA_USER }}
+
+jobs:
+  scan-manifests:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout PR branch
+      uses: actions/checkout@v3
+      with:
+        # Checks out the repository linked to the PR
+        repository: ${{ github.event.pull_request.head.repo.full_name }}
+        # Checks out the branch from the PR
+        ref: ${{ github.event.pull_request.head.ref }}
+
+    - name: nctl-scan-installer
+      uses: supplypike/setup-bin@v4
+      with:
+        uri: https://dl.nirmata.io/nctl/nctl_4.3.1/nctl_4.3.1_linux_386.zip
+        name: 'nctl'
+        version: '4.3.1'
+
+    - name: Check nctl version
+      run: |
+        nctl version
+
+    - name: nctl login
+      run: nctl login --url $NIRMATA_URL --userid $NIRMATA_USER --token $NIRMATA_TOKEN
+
+    - name: Checkout terraform policies
+      uses: actions/checkout@v3
+      with:
+        repository: nirmata/kyverno-policies
+
+    - name: NCTL Scan Terraform Manifests
+      run: |
+        ./shift-left/scripts/setup-terraform.sh
+        nctl scan terraform --policies kyverno-policies/terraform/plan/ec2-best-practices --resources shift-left/iac/terraform/payload.json --publish
+
