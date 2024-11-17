@@ -1,15 +1,17 @@
 # Nirmata Proof of Value
-Welcome to the Nirmata Proof of Value (POV) repository – your gateway to exploring and experiencing Nirmata's powerful capabilities!
+Welcome to the Nirmata Proof of Value (POV) repository – your one-stop source for rapidly exploring Nirmata's powerful capabilities!
 
-This repository is designed to help you explore and evaluate the capabilities of [Nirmata Enterprise Kyverno](https://nirmata.com/nirmata-enterprise-for-kyverno/) and the [Nirmata Control Hub](https://nirmata.com/nirmata-control-hub/) through self-service guides and workflows.
+Nirmata is the creator and core maintainer of Kyverno, the popular CNCF Policy as Code solution. Nirmata's commercial solutions are designed to optimize the usage and maximize the value enterprises can derive from Kyverno, by saving time and costs, and improving productivity of DevSecOps and platform engineering teams.
+
+This repository is designed to help you explore and evaluate the capabilities of [Nirmata Enterprise For Kyverno (N4K)](https://nirmata.com/nirmata-enterprise-for-kyverno/) and the [Nirmata Control Hub (NCH)](https://nirmata.com/nirmata-control-hub/) through self-service guides and workflows.
 
 ## What You'll Find Here
 * Guides for Nirmata Products:
 
 Step-by-step instructions to set up and use:
 
-  * Enterprise Kyverno: The enterprise-grade version of the CNCF’s Kyverno, with enhanced features for policy management, security, and governance.
-  * Nirmata Control Hub: A comprehensive cloud governance platform for managing security, compliance, and operational policies across your Kubernetes and cloud environments.
+  * Nirmata Enterprise For Kyverno (N4K): The enterprise-grade version of the CNCF’s Kyverno, with enhanced features for policy management, security, and governance.
+  * Nirmata Control Hub (NCH): A comprehensive cloud governance platform for managing security, compliance, and operational policies across your Kubernetes and cloud environments.
 
 * Workflows for Local or Sandbox Environments:
 Easily try out the features in your own environment or in a provided sandbox setup to understand the value of Nirmata's solutions.
