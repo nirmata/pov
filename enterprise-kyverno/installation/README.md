@@ -6,6 +6,10 @@ This guide outlines the recommended approach for installing and managing Enterpr
 * Continuous Delivery: Integrate Kyverno deployments into your existing CI/CD pipelines for faster and more reliable releases.
 * Collaboration: Facilitate collaboration among teams by providing a single source of truth for all Kyverno configurations.
 
+Jump to ArgoCD approach [here](./argocd/README.md).
+
+Enterprise Kyverno is also available as an independent Helm chart that you can install in your cluster. If you skipped installation via ArgoCD, continue following the below steps.
+
 ## Prerequisites
 * Kubernetes version compatibility:
   * Enterprise Kyverno supports Kubernetes versions 1.22 and above (see [Kubernetes Compatibility Matrix](https://docs.nirmata.io/docs/n4k/release-compatibility-matrix/))
@@ -32,4 +36,3 @@ kubectl get pods -n kyverno
 
 ## Install Policies
 
-## Setup policy checks in CI pipeline

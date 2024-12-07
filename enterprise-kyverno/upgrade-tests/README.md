@@ -1,18 +1,18 @@
 ## Upgrade tests across different versions of N4K & Kyverno OSS
 
-This repository contains a Chainsaw test that automates testing of the following upgrade sequence:
+This guide contains a Chainsaw test that automates testing of the following upgrade sequence:
 
 ```sh
 OSS 1.10 --> N4K 1.10 --> N4K 1.11 --> OSS 1.11
 ```
 
-The test uses YAML manifests to emulate the ArgoCD upgrade which will render manifests from a helm chart.
+The test uses YAML manifests to emulate the ArgoCD upgrade which will render manifests from a Helm chart.
 
 The steps followed at each installation are:
 
 ## Pre-Requisites
 
-1. Install a cluster on Kind
+1. Install a Kind cluster
 
 2. All tests are run on Kubernetes v1.28
 
@@ -34,11 +34,11 @@ kubectl apply -f <filename.yaml> --server-side=true
 
 3. After installing Kyverno, we wait for sometime for all the pods to come up properly.
 
-4. Once all the pods are up and running, we use a policy `require-run-as-nonroot` to validate Kyverno functionality.
+4. Once all the pods are up and running, we use a sample test policy `require-run-as-nonroot` to validate the Kyverno functionality.
 
 5. Chainsaw tests are run on the cluster to validate the policies for both positive and negative test cases for each version of Kyverno.
 
-6. A successful run implies that each version mentioned above is installed properly, Kyverno pods are brought up and the policies that are configured at the first step are working through the upgrade.
+6. A successful run implies that each version mentioned above is installed properly, Kyverno pods are brought up and the policies that are configured in the first step are working through the upgrade.
 
 ## Assumptions
 
@@ -47,5 +47,3 @@ kubectl apply -f <filename.yaml> --server-side=true
 2. Cronjobs are deleted after upgrading from each N4K version to clear the completed pods.
 
 ## Sample Run
-
-https://github.com/nirmata/robinhood-pov/actions/runs/9529404982/job/26268121426
