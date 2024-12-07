@@ -1,17 +1,17 @@
 # Nirmata Proof of Value
 Welcome to the Nirmata Proof of Value (POV) repository – your one-stop source for rapidly exploring Nirmata's powerful capabilities!
 
-Nirmata is the creator and core maintainer of Kyverno, the popular CNCF Policy as Code solution. Nirmata's commercial solutions are designed to optimize the usage and maximize the value enterprises can derive from Kyverno, by saving time and costs, and improving productivity of DevSecOps and platform engineering teams.
+Nirmata is the creator and core maintainer of [Kyverno](https://kyverno.io/), the popular CNCF Policy-as-Code solution. Nirmata's commercial solutions are designed to optimize the usage and maximize the value enterprises can derive from Kyverno, by saving time and costs, and improving productivity of DevSecOps and platform engineering teams.
 
-This repository is designed to help you explore and evaluate the capabilities of [Nirmata Enterprise For Kyverno (N4K)](https://nirmata.com/nirmata-enterprise-for-kyverno/) and the [Nirmata Control Hub (NCH)](https://nirmata.com/nirmata-control-hub/) through self-service guides and workflows.
+This repository is designed to help you explore and evaluate the capabilities of [Nirmata Enterprise For Kyverno (N4K)](https://nirmata.com/nirmata-enterprise-for-kyverno/) through self-service guides and workflows.
 
 ## What You'll Find Here
 * Guides for Nirmata Products:
 
 Step-by-step instructions to set up and use:
 
-  * Nirmata Enterprise For Kyverno (N4K): The enterprise-grade version of the CNCF’s Kyverno, with enhanced features for policy management, security, and governance.
-  * Nirmata Control Hub (NCH): A comprehensive cloud governance platform for managing security, compliance, and operational policies across your Kubernetes and cloud environments.
+  * [Nirmata Enterprise For Kyverno (N4K)](https://nirmata.com/nirmata-enterprise-for-kyverno/): The enterprise-grade version of CNCF’s Kyverno, with enhanced features for policy management, security, and governance.
+  * [Nirmata Control Hub (NCH)](https://nirmata.com/nirmata-control-hub/): A comprehensive cloud governance platform for managing security, compliance, and operational policies across your Kubernetes and cloud environments.
 
 * Workflows for Local or Sandbox Environments:
 Easily try out the features in your own environment or in a provided sandbox setup to understand the value of Nirmata's solutions.
@@ -23,6 +23,7 @@ Learn how to:
   * Implement GitOps workflows with tools like ArgoCD.
   * Shift-left security and governance with nctl in CI/CD pipelines.
   * Manage the policy lifecycle using Nirmata's curated policysets and Chainsaw.
+  * Ensure your policies are production-ready by benchmarking performance at scale.
 
 ## How to Use This Repository
 This repository is structured to help you understand the capabilities of Nirmata's products and address specific use cases. Here’s how you can get started:
@@ -34,7 +35,7 @@ This repository is structured to help you understand the capabilities of Nirmata
 2. **Jump to Your Use Case:**
     * If you have a specific use case in mind, feel free to dive directly into the relevant section and follow the detailed instructions.
 
-3. **Suggested Flow for New Users:** If you’re new to Nirmata or looking for a structured path, we recommend the following approach:
+3. **Suggested Flow for New Users:** If you’re new to Kyverno or Policy-as-Code in general, we recommend the following approach:
     * **Start with Enterprise Kyverno**
     Install and configure Enterprise Kyverno to secure your Kubernetes environment.
     * **Install Curated Policies**
