@@ -1,10 +1,10 @@
-# Deploying policies with ArgoCD
+# Installing Enterprise Kyverno with GitOps
 
-This repository demonstrates how to automate GitOps deployments of Kyverno and Kyverno policies using ArgoCD application sets.
+This guide deploys Enterprise Kyverno and policies using ArgoCD application sets.
 
 The setup runs ArgoCD on its own `hub` cluster and creates namespaces and applications on a `shared` cluster. 
 
-For the demo, we will use `kind` clusters.
+For the PoV, we will use `kind` clusters.
 
 <img src="https://github.com/nirmata/robinhood-pov/assets/5804477/c8d25b7a-fca5-49ac-9163-38138ca4a8e9" alt="drawing" width="750"/>
 
@@ -45,7 +45,7 @@ Install the [argocd CLI](https://argo-cd.readthedocs.io/en/stable/cli_installati
 argocd login localhost:8080 --username admin --password <SECRET>
 ```
 
-**Install ArgoCD ApplicationSet resources for Kyverno and Kyverno policies**
+**Install ArgoCD ApplicationSet resources for Enterprise Kyverno and Kyverno policies**
 
 ```sh
 kubectl apply -f argocd/config/argocd-cluster/appsets/
@@ -74,12 +74,12 @@ kind create cluster --name shared --config /tmp/kind-config.yaml
 Register the kind cluster with ArgoCD:
 
 ```sh
-argocd cluster add kind-shared  -y
+argocd cluster add kind-shared -y
 ```
 
-### 4. Check the shared cluster for Kyverno and policies
+### 4. Check the shared cluster for Enterprise Kyverno and policies
 
-ArgoCD will automatically deploy Kyverno and the configured policies:
+ArgoCD will automatically deploy Enterprise Kyverno and the configured policies:
 
 ![ArgoCD Kyverno](img/argocd-kyverno-policies.png)
 
@@ -121,7 +121,7 @@ restrict-sysctls                 true        true         enforce           True
 restrict-volume-types            true        true         enforce           True    3m24s   Ready
 ```
 
-**NOTE**: If the policies do not show `READY: true,` the Kyverno installation may not have completed correctly.
+**NOTE**: If the policies do not show `READY: true,` then Kyverno installation may not have completed correctly.
 
 ### 4. Create an insecure application on the shared cluster
 

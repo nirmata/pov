@@ -1,4 +1,10 @@
 # Installation Guide
+This guide outlines the recommended approach for installing and managing Enterprise Kyverno using GitOps principles. By leveraging GitOps, you can:
+
+* Version Control: Track all Kyverno configurations (including policies, roles, and clusters) within your Git repository, enabling easy audits, rollbacks, and collaboration.
+* Automation: Automate deployments and updates, reducing manual effort and minimizing human error.
+* Continuous Delivery: Integrate Kyverno deployments into your existing CI/CD pipelines for faster and more reliable releases.
+* Collaboration: Facilitate collaboration among teams by providing a single source of truth for all Kyverno configurations.
 
 ## Prerequisites
 * Kubernetes version compatibility:
