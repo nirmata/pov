@@ -5,6 +5,9 @@ Nirmata is the creator and core maintainer of [Kyverno](https://kyverno.io/), th
 
 This repository is designed to help you explore and evaluate the capabilities of [Nirmata Enterprise For Kyverno (N4K)](https://nirmata.com/nirmata-enterprise-for-kyverno/) through self-service guides and workflows.
 
+## Policy-as-Code
+Policy as code ensures consistent, automated enforcement of policies across the software lifecycle, enabling teams to shift left and scale governance. To implement it effectively, evaluate solutions against a [Policy-as-Code checklist](./PaC.md) to ensure they support version control, automation, testing, and integration with your workflows.
+
 ## What You'll Find Here
 * Guides for Nirmata Products:
 
