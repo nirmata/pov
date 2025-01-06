@@ -35,4 +35,6 @@ kubectl get pods -n kyverno
 ```
 
 ## Install Policies
-
+```bash
+kustomize build https://github.com/nirmata/kyverno-policies/pod-security/enforce | kubectl apply -f -
+```
