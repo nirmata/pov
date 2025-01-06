@@ -38,9 +38,9 @@ This repository is structured to help you understand the capabilities of Nirmata
 3. **Suggested Flow for New Users:** If you’re new to Kyverno or Policy-as-Code in general, we recommend the following approach:
     * **[Start with Enterprise Kyverno](./enterprise-kyverno/installation/README.md)**
     Install and configure Enterprise Kyverno to secure your Kubernetes environment.
-    * **[Install Curated Policies](policy-management/README.md)**
+    * **Install Curated Policies**
     Apply default and custom policies, and explore tools like Chainsaw to write and test robust policies.
-    * **[Shift Security Left](shift-left/README.md)**
+    * **[Shift Security Left](shift-left/app/README.md)**
     Once Kyverno is operational in your cluster, automate CI pipelines to enforce security and governance early in the development lifecycle. Leverage nctl to integrate policy checks in your pipelines effectively.
 
 Following this flow ensures you gain a comprehensive understanding of Nirmata's capabilities while addressing common security and governance challenges.
