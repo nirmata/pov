@@ -32,6 +32,7 @@ kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}
 ```sh
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
 ```
+>NOTE: It might take a few seconds for `argocd-initial-admin-secret` to be created.
 
 ```sh
 kubectl port-forward svc/argocd-server -n argocd 8080:443
