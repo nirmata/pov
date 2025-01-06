@@ -172,3 +172,9 @@ To clean up, delete the two kind clusters:
 kind delete cluster --name shared
 kind delete cluster --name argocd
 ```
+
+## What's Next
+In this guide we set up Kyverno and enforced the [Kubernetes Pod Security Standards](https://kubernetes.io/docs/concepts/security/pod-security-standards/). Here are some other policies and use cases that you can explore and implement:
+* Implement [RBAC Best Practices](https://github.com/nirmata/kyverno-policies/tree/main/rbac-best-practices)
+* Implement [Workload Security Best Practices](https://github.com/nirmata/kyverno-policies/tree/main/best-practices)
+* Explore [Essential policies to implement in your Kubernetes Cluster](https://nirmata.com/2024/12/03/5-essential-policies-to-implement-in-your-kubernetes-cluster-with-kyverno/)
