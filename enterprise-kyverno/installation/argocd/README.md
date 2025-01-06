@@ -102,24 +102,24 @@ This should show:
 
 ```sh
 kubectl get cpol -A
-NAME                             ADMISSION   BACKGROUND   VALIDATE ACTION   READY   AGE     MESSAGE
-disallow-capabilities            true        true         enforce           True    3m24s   Ready
-disallow-capabilities-strict     true        true         enforce           True    3m24s   Ready
-disallow-host-namespaces         true        true         enforce           True    3m24s   Ready
-disallow-host-path               true        true         enforce           True    3m24s   Ready
-disallow-host-ports              true        true         enforce           True    3m24s   Ready
-disallow-host-process            true        true         enforce           True    3m24s   Ready
-disallow-privilege-escalation    true        true         enforce           True    3m24s   Ready
-disallow-privileged-containers   true        true         enforce           True    3m24s   Ready
-disallow-proc-mount              true        true         enforce           True    3m24s   Ready
-disallow-selinux                 true        true         enforce           True    3m24s   Ready
-require-run-as-non-root-user     true        true         enforce           True    3m24s   Ready
-require-run-as-nonroot           true        true         enforce           True    3m24s   Ready
-restrict-apparmor-profiles       true        true         enforce           True    3m24s   Ready
-restrict-seccomp                 true        true         enforce           True    3m24s   Ready
-restrict-seccomp-strict          true        true         enforce           True    3m24s   Ready
-restrict-sysctls                 true        true         enforce           True    3m24s   Ready
-restrict-volume-types            true        true         enforce           True    3m24s   Ready
+NAME                             ADMISSION   BACKGROUND   READY   AGE   MESSAGE
+disallow-capabilities            true        true         True    8s    Ready
+disallow-capabilities-strict     true        true         True    8s    Ready
+disallow-host-namespaces         true        true         True    8s    Ready
+disallow-host-path               true        true         True    8s    Ready
+disallow-host-ports              true        true         True    8s    Ready
+disallow-host-process            true        true         True    8s    Ready
+disallow-privilege-escalation    true        true         True    8s    Ready
+disallow-privileged-containers   true        true         True    8s    Ready
+disallow-proc-mount              true        true         True    8s    Ready
+disallow-selinux                 true        true         True    8s    Ready
+require-run-as-non-root-user     true        true         True    8s    Ready
+require-run-as-nonroot           true        true         True    8s    Ready
+restrict-apparmor-profiles       true        true         True    8s    Ready
+restrict-seccomp                 true        true         True    8s    Ready
+restrict-seccomp-strict          true        true         True    8s    Ready
+restrict-sysctls                 true        true         True    8s    Ready
+restrict-volume-types            true        true         True    8s    Ready
 ```
 
 **NOTE**: If the policies do not show `READY: true,` then Kyverno installation may not have completed correctly.
