@@ -20,7 +20,7 @@ spec:
       project: "default"
       sources:
       - chart: kyverno
-        repoURL: https://nirmata.github.io/kyverno/
+        repoURL: https://nirmata.github.io/kyverno-charts/
         targetRevision: 3.3.0
         helm:
           values: |
