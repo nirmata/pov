@@ -18,4 +18,4 @@ This Proof of Value (POV) document is designed to help you, whether you are new 
 * **Shift Left:** Leverage the [Nirmata CLI](https://docs.nirmata.io/docs/nctl/), included with your Enterprise Kyverno subscription, to integrate policy checks into your CI pipelines. By shifting policy enforcement left in the development lifecycle, your teams can get immediate feedback on misconfigurations before code reaches production.
 * **GitOps Integration:** Simplify policy management using ArgoCD, ensuring consistency across clusters.
 
-Proceed to the [Installation Guide](./install/README.md).
+Proceed to the [Installation Guide](./installation/README.md).
