@@ -111,15 +111,6 @@ kubectl apply -f argocd/config/sample-apps/good-pod.yaml --dry-run=server
 
 This pod should be allowed as it complies with the `Restricted` profile of the Pod Security Standards.
 
-## Cleanup
-
-To clean up, delete the two kind clusters:
-
-```sh
-kind delete cluster --name shared
-kind delete cluster --name argocd
-```
-
 ## What's Next
 In this guide we set up Kyverno and enforced the [Kubernetes Pod Security Standards](https://kubernetes.io/docs/concepts/security/pod-security-standards/). Here are some other policies and use cases that you can explore and implement:
 * Implement [RBAC Best Practices](https://github.com/nirmata/kyverno-policies/tree/main/rbac-best-practices)
